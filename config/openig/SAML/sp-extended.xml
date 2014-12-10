@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EntityConfig entityID="https://forgerock.agency-x.gov:9443/openam" hosted="true" xmlns="urn:sun:fm:SAML:2.0:entityconfig">
+    <SPSSOConfig metaAlias="/sp">
+        <Attribute name="appLogoutUrl">
+            <Value/>
+        </Attribute>
+        <Attribute name="spAdapterEnv"/>
+        <Attribute name="useIntroductionForIDPProxy">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="spAdapter">
+            <Value/>
+        </Attribute>
+        <Attribute name="intermediateUrl">
+            <Value/>
+        </Attribute>
+        <Attribute name="spAccountMapper">
+            <Value>com.sun.identity.saml2.plugins.DefaultLibrarySPAccountMapper</Value>
+        </Attribute>
+        <Attribute name="useIDPFinder"/>
+        <Attribute name="enableIDPProxy">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="spAuthncontextMapper">
+            <Value>com.sun.identity.saml2.plugins.DefaultSPAuthnContextMapper</Value>
+        </Attribute>
+        <Attribute name="idpProxyCount">
+            <Value>0</Value>
+        </Attribute>
+        <Attribute name="wantAttributeEncrypted">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="cotlist">
+            <Value>federalconnect</Value>
+        </Attribute>
+        <Attribute name="ECPRequestIDPListFinderImpl">
+            <Value>com.sun.identity.saml2.plugins.ECPIDPFinder</Value>
+        </Attribute>
+        <Attribute name="relayStateUrlList"/>
+        <Attribute name="idpProxyList">
+            <Value/>
+        </Attribute>
+        <Attribute name="wantLogoutResponseSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="saeSPLogoutUrl"/>
+        <Attribute name="basicAuthUser">
+            <Value/>
+        </Attribute>
+        <Attribute name="wantPOSTResponseSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="alwaysIdpProxy"/>
+        <Attribute name="spSessionSyncEnabled">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="spAuthncontextClassrefMapping">
+            <Value>http://idmanagement.gov/icam/2009/12/saml_2.0_profile/assurancelevel1|1|default</Value>
+            <Value>http://idmanagement.gov/icam/2009/12/saml_2.0_profile/assurancelevel2|2|default</Value>
+            <Value>http://idmanagement.gov/icam/2009/12/saml_2.0_profile/assurancelevel3|3|default</Value>
+            <Value>http://idmanagement.gov/icam/2009/12/saml_2.0_profile/assurancelevel4|4|default</Value>
+        </Attribute>
+        <Attribute name="assertionTimeSkew">
+            <Value>300</Value>
+        </Attribute>
+        <Attribute name="spDoNotWriteFederationInfo">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="wantAssertionEncrypted">
+            <Value>true</Value>
+        </Attribute>
+        <Attribute name="basicAuthOn">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="useNameIDAsSPUserID">
+            <Value>true</Value>
+        </Attribute>
+        <Attribute name="attributeMap">
+            <Value>given_name=given_name</Value>
+            <Value>region=region</Value>
+            <Value>postal_code=postal_code</Value>
+            <Value>country=country</Value>
+            <Value>family_name=family_name</Value>
+            <Value>email=email</Value>
+            <Value>locality=locality</Value>
+            <Value>subject_dn=subject_dn</Value>
+            <Value>subject_alternative_name=subject_alternative_name</Value>
+            <Value>uuid=uuid</Value>
+            <Value>fasc_n=fasc_n</Value>
+        </Attribute>
+        <Attribute name="autofedAttribute">
+            <Value>email</Value>
+            <Value/>
+        </Attribute>
+        <Attribute name="saml2AuthModuleName">
+            <Value/>
+        </Attribute>
+        <Attribute name="defaultRelayState">
+            <Value/>
+        </Attribute>
+        <Attribute name="wantNameIDEncrypted">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="responseArtifactMessageEncoding">
+            <Value>URI</Value>
+        </Attribute>
+        <Attribute name="saeAppSecretList"/>
+        <Attribute name="localAuthURL">
+            <Value/>
+        </Attribute>
+        <Attribute name="saeSPUrl">
+            <Value>https://forgerock.agency-x.gov:9443/openam/spsaehandler/metaAlias/sp</Value>
+        </Attribute>
+        <Attribute name="transientUser">
+            <Value/>
+        </Attribute>
+        <Attribute name="autofedEnabled">
+            <Value>true</Value>
+        </Attribute>
+        <Attribute name="wantMNIResponseSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="wantLogoutRequestSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="ECPRequestIDPListGetComplete">
+            <Value/>
+        </Attribute>
+        <Attribute name="spAuthncontextComparisonType">
+            <Value>exact</Value>
+        </Attribute>
+        <Attribute name="basicAuthPassword">
+            <Value/>
+        </Attribute>
+        <Attribute name="wantArtifactResponseSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="spAttributeMapper">
+            <Value>com.sun.identity.saml2.plugins.DefaultSPAttributeMapper</Value>
+        </Attribute>
+        <Attribute name="ECPRequestIDPList">
+            <Value/>
+        </Attribute>
+        <Attribute name="wantMNIRequestSigned">
+            <Value>false</Value>
+        </Attribute>
+        <Attribute name="metaAlias"/>
+        <Attribute name="signingCertAlias">
+            <Value>test</Value>
+        </Attribute>
+        <Attribute name="encryptionCertAlias">
+            <Value>test</Value>
+        </Attribute>
+    </SPSSOConfig>
+</EntityConfig>

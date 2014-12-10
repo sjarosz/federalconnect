@@ -1,0 +1,88 @@
+ {
+    "heap": {
+        "objects": [
+
+{
+                "name": "DispatchHandler",
+                "type": "DispatchHandler",
+                "config": {
+                    "bindings": [
+                        {
+                            "condition": "${matches(exchange.request.uri.path, '^/saml')}",
+                            "handler": "SAMLChain"
+                        },
+                        {
+                            "condition": "${matches(exchange.request.uri.path, '^/openam')}",
+                            "handler": "SAMLChain"
+                        },                   
+                        {
+                            "handler": "OutgoingChain",
+                            "baseURI": "http://localhost:8181"
+                        }
+                    ]
+                }
+},
+
+    {
+                "name": "SAMLChain",
+                "type": "Chain",
+                "config": {
+                    "filters": [],
+                    "handler": "SamlFederationHandler"
+                }
+            },
+
+{
+    			"name": "SamlFederationHandler",
+    			"type": "SamlFederationHandler",
+    			"config": {
+        			"assertionMapping": {
+            			"uuid": "uuid",
+            			"subject_dn": "subject_dn",
+            			"family_name": "family_name",
+            			"given_name": "given_name",
+            			"email": "email"
+        			},
+				"assertionConsumerEndpoint": "/Consumer/metaAlias/sp",
+        			"logoutURI": "/logout"
+    			}
+
+            	},
+
+            {
+                "name": "OutgoingChain",
+                "type": "Chain",
+                "config": {
+                    "filters": ["HeaderInject"],
+                    "handler": "ClientHandler"
+                }
+            },
+
+            {
+                "name": "HeaderInject",
+                  "type": "HeaderFilter",
+                    "comment": "Same header on all requests",
+                    "config": {
+                        "messageType": "REQUEST",
+                        "add": {
+                            "LOA": [ "0" ],
+                            "uuid": [ "${exchange.session.uuid}" ],
+                            "subject_dn": [ "${exchange.session.subject_dn}" ],
+                            "given_name": [ "${exchange.session.given_name}" ],
+                            "family_name": [ "${exchange.session.family_name}" ],
+                            "email": [ "${exchange.session.email}" ]
+                        }
+                    }
+            },
+
+
+            {
+                "name": "ClientHandler",
+                "comment": "Sends all requests to remote servers.",
+                "type": "ClientHandler",
+                "config": {}
+            }
+        ]
+    },
+    "handler": "DispatchHandler"
+}
